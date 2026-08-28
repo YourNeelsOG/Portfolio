@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { profile, skills, projects, experience, socials } from "@/data/content";
+import { asset } from "@/lib/asset";
 
 function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   return (
@@ -47,7 +48,7 @@ export function About() {
         <Reveal>
           <div className="mx-auto w-fit rounded-xl border border-[color:var(--color-border)] bg-[#0d0d0f] p-3 shadow-xl shadow-black/20">
             <Image
-              src={profile.avatar}
+              src={asset(profile.avatar)}
               alt="ASCII-art portrait of Kisuke Urahara"
               width={260}
               height={260}

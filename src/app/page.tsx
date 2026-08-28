@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useTerminal } from "@/lib/store";
+import { loadGithub } from "@/lib/github";
 import TexturedBg from "@/components/TexturedBg";
 import FloatingIcons from "@/components/FloatingIcons";
 import Terminal from "@/components/Terminal";
@@ -12,16 +13,13 @@ export default function Home() {
   const phase = useTerminal((s) => s.phase);
   const setGithub = useTerminal((s) => s.setGithub);
 
-  // Pull live GitHub data once; the terminal's `repos` / `activity` commands
-  // and the neofetch card read it from the store.
+  // Pull live GitHub data once (client-side, so it works on static hosting);
+  // the terminal's `repos` / `activity` commands and the neofetch card read it.
   useEffect(() => {
     let cancelled = false;
-    fetch("/api/github")
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => {
-        if (d && !cancelled) setGithub(d);
-      })
-      .catch(() => {});
+    loadGithub().then((d) => {
+      if (d && !cancelled) setGithub(d);
+    });
     return () => {
       cancelled = true;
     };

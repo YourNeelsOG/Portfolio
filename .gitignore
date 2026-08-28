@@ -8,3 +8,4 @@ node_modules/
 .claude/
 docs/superpowers/
 next-env.d.ts
+out/

@@ -27,7 +27,9 @@ export const metadata: Metadata = {
   title: "Neel - Software Developer",
   description:
     "Junior software developer from Bangladesh. Self-hosted infra, media tooling, automation, and codebase internals. Enter the terminal.",
-  icons: { icon: "/img/urahara.png" },
+  icons: {
+    icon: `${process.env.NODE_ENV === "production" ? "/Portfolio" : ""}/img/urahara.png`,
+  },
 };
 
 export default function RootLayout({

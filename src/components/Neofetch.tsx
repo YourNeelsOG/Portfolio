@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { profile } from "@/data/content";
 import { useTerminal } from "@/lib/store";
+import { asset } from "@/lib/asset";
 
 // The fastfetch-style profile card: ASCII Urahara portrait + key/value stats.
 // Used both in the boot sequence and by the `neofetch` command.
@@ -42,7 +43,7 @@ export default function Neofetch() {
           onto the near-black terminal so it reads as transparent. Height is set to
           the info block height so the art ends exactly where the text ends. */}
       <Image
-        src={profile.avatar}
+        src={asset(profile.avatar)}
         alt="ASCII-art portrait of Kisuke Urahara"
         width={220}
         height={220}
