@@ -87,9 +87,8 @@ export const experience: TimelineEntry[] = [
     when: "September 2026 - Present",
     company: "Automata One",
     title: "Junior Software Developer",
-    // TODO: add company name + start date once confirmed.
     detail:
-      "Building and maintaining production software. Learning the craft in a team, shipping real features.",
+      "Full-stack work on a production learning platform for an ed-tech client: admin panel, student app, public website and Python backend. Built a form builder with public forms, themes and live analytics, and shipped course, catalogue and feedback features with TypeScript, Next.js, Python and Docker.",
   },
   {
     when: "July 2025 - August 2026",
